@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+  <style>
+    .flip-container {
+      perspective: 1000px;
+    }
+    .flip-container, .front, .back {
+      width: 200px;
+      height: 200px;
+    }
+    .flipper {
+      transition: 0.6s;
+      transform-style: preserve-3d;
+
+      position: relative;
+    }
+    .front, .back {
+      backface-visibility: hidden;
+
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+    .front {
+      z-index: 2;
+      /* for firefox 31 */
+      transform: rotateX(0deg);
+    }
+    .back {
+      transform: rotateX(180deg);
+    }
+    .vertical.flip-container {
+      position: relative;
+    }
+
+    .vertical .back {
+      transform: rotateX(180deg);
+    }
+
+    .vertical.flip-container .flipper {
+      transform-origin: 100% 100px; /* half of height */
+    }
+
+    .vertical.flip-container.hover .flipper {
+      transform: rotateX(-180deg);
+    }
+
+
+    .container {
+      width: 100%;
+      height: 100%;
+    }
+    .btn-container {
+      width: 200px;
+      padding-top: 200px;
+      float: left;
+    }
+    .img-container {
+      float: left;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="btn-container">
+      <button id="reset" class="ml-200">重置</button>
+      <br />
+      <br />
+      <button id="step1" class="ml-200">step1</button>
+      <br />
+      <br />
+      <button id="step2" class="ml-200">step2</button>
+      <br />
+      <br />
+      <button id="step3" class="ml-200">step3</button>
+    </div>
+    <div class="img-container">
+      <table cellspacing="0" style="border-spacing: 0;" class="ml-200">
+        <tr>
+          <td>
+            <div id="toggle-div" class="flip-container vertical">
+              <div class="flipper">
+                <div class="front">
+                  <img id="img1" />
+                </div>
+                <div class="back">
+                  <img id="img1" />
+                </div>
+              </div>
+            </div>
+          </td>
+          <td>
+            <div id="toggle-div" class="flip-container vertical">
+              <div class="flipper">
+                <div class="front">
+                  <img id="img2" />
+                </div>
+                <div class="back">
+                  <img id="img2" />
+                </div>
+              </div>
+            </div>
+          </td>
+          <td>
+            <div id="toggle-div" class="flip-container vertical">
+              <div class="flipper">
+                <div class="front">
+                  <img id="img3" />
+                </div>
+                <div class="back">
+                  <img id="img3" />
+                </div>
+              </div>
+            </div>
+          </td>
+          <td>
+            <div id="toggle-div" class="flip-container vertical">
+              <div class="flipper">
+                <div class="front">
+                  <img id="img4" />
+                </div>
+                <div class="back">
+                  <img id="img4" />
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div id="toggle-div" class="flip-container vertical">
+              <div class="flipper">
+                <div class="front">
+                  <img id="img5" />
+                </div>
+                <div class="back">
+                  <img id="img5" />
+                </div>
+              </div>
+            </div>
+          </td>
+          <td>
+            <div id="toggle-div" class="flip-container vertical">
+              <div class="flipper">
+                <div class="front">
+                  <img id="img6" />
+                </div>
+                <div class="back">
+                  <img id="img6" />
+                </div>
+              </div>
+            </div>
+          </td>
+          <td>
+            <div id="toggle-div" class="flip-container vertical">
+              <div class="flipper">
+                <div class="front">
+                  <img id="img7" />
+                </div>
+                <div class="back">
+                  <img id="img7" />
+                </div>
+              </div>
+            </div>
+          </td>
+          <td>
+            <div id="toggle-div" class="flip-container vertical">
+              <div class="flipper">
+                <div class="front">
+                  <img id="img8" />
+                </div>
+                <div class="back">
+                  <img id="img8" />
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div id="toggle-div" class="flip-container vertical">
+              <div class="flipper">
+                <div class="front">
+                  <img id="img9" />
+                </div>
+                <div class="back">
+                  <img id="img9" />
+                </div>
+              </div>
+            </div>
+          </td>
+          <td>
+            <div id="toggle-div" class="flip-container vertical">
+              <div class="flipper">
+                <div class="front">
+                  <img id="img10" />
+                </div>
+                <div class="back">
+                  <img id="img10" />
+                </div>
+              </div>
+            </div>
+          </td>
+          <td>
+            <div id="toggle-div" class="flip-container vertical">
+              <div class="flipper">
+                <div class="front">
+                  <img id="img11" />
+                </div>
+                <div class="back">
+                  <img id="img11" />
+                </div>
+              </div>
+            </div>
+          </td>
+          <td>
+            <div id="toggle-div" class="flip-container vertical">
+              <div class="flipper">
+                <div class="front">
+                  <img id="img12" />
+                </div>
+                <div class="back">
+                  <img id="img12" />
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div id="toggle-div" class="flip-container vertical">
+              <div class="flipper">
+                <div class="front">
+                  <img id="img13" />
+                </div>
+                <div class="back">
+                  <img id="img13" />
+                </div>
+              </div>
+            </div>
+          </td>
+          <td>
+            <div id="toggle-div" class="flip-container vertical">
+              <div class="flipper">
+                <div class="front">
+                  <img id="img14" />
+                </div>
+                <div class="back">
+                  <img id="img14" />
+                </div>
+              </div>
+            </div>
+          </td>
+          <td>
+            <div id="toggle-div" class="flip-container vertical">
+              <div class="flipper">
+                <div class="front">
+                  <img id="img15" />
+                </div>
+                <div class="back">
+                  <img id="img15" />
+                </div>
+              </div>
+            </div>
+          </td>
+          <td>
+            <div id="toggle-div" class="flip-container vertical">
+              <div class="flipper">
+                <div class="front">
+                  <img id="img16" />
+                </div>
+                <div class="back">
+                  <img id="img16" />
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div id="toggle-div" class="flip-container vertical">
+              <div class="flipper">
+                <div class="front">
+                  <img id="img17" />
+                </div>
+                <div class="back">
+                  <img id="img17" />
+                </div>
+              </div>
+            </div>
+          </td>
+          <td>
+            <div id="toggle-div" class="flip-container vertical">
+              <div class="flipper">
+                <div class="front">
+                  <img id="img18" />
+                </div>
+                <div class="back">
+                  <img id="img18" />
+                </div>
+              </div>
+            </div>
+          </td>
+          <td>
+            <div id="toggle-div" class="flip-container vertical">
+              <div class="flipper">
+                <div class="front">
+                  <img id="img19" />
+                </div>
+                <div class="back">
+                  <img id="img19" />
+                </div>
+              </div>
+            </div>
+          </td>
+          <td>
+            <div id="toggle-div" class="flip-container vertical">
+              <div class="flipper">
+                <div class="front">
+                  <img id="img20" />
+                </div>
+                <div class="back">
+                  <img id="img20" />
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  <script>
+
+    // 为用户选择的图片序号
+    let randomSelectedNum = 1
+    let currentSide = 'front'
+
+    let imageList = new Array(20)
+    const selectedIndex = new Set()
+
+    // 不同位置图片坐标
+    function getImgCoord(width, height, row, col, index) {
+      const endW = width / 4 * col
+      const endH = height / 5 * row
+      const startW = endW - width / 4
+      const startH = endH - height / 5
+      return [startW, startH, width / 4, height / 5]
+    }
+
+    function init() {
+      randomSelectedNum = Math.round(Math.random() * 19)
+
+      makeImgList()
+      showImages('front')
+      makeImgList()
+      showImages('back')
+
+      addBtnListener()
+    }
+
+    function addBtnListener() {
+      const resetBtn = document.getElementById('reset')
+      resetBtn.addEventListener('click', () => {
+        selectedIndex.clear()
+        randomSelectedNum = Math.round(Math.random() * 19)
+        makeImgList()
+        showImages('front')
+        makeImgList()
+        showImages('back')
+      })
+
+      const step1Btn = document.getElementById('step1')
+      step1Btn.addEventListener('click', () => {
+        currentSide = currentSide == 'front' ? 'back' : 'front'
+        makeImgList(1)
+        showImages(currentSide)
+        toggleImage()
+      })
+
+      const step2Btn = document.getElementById('step2')
+      step2Btn.addEventListener('click', () => {
+        currentSide = currentSide == 'front' ? 'back' : 'front'
+        makeImgList(2)
+        showImages(currentSide)
+        toggleImage()
+      })
+
+      const step3Btn = document.getElementById('step3')
+      step3Btn.addEventListener('click', () => {
+        currentSide = currentSide == 'front' ? 'back' : 'front'
+        makeImgList(3)
+        showImages(currentSide)
+        toggleImage()
+      })
+    }
+
+    function toggleImage() {
+      const containerArr = document.querySelectorAll('.flip-container')
+        for (let i = 0; i < containerArr.length; i++) {
+          containerArr[i].classList.toggle('hover')
+        }
+    }
+
+    function showImages(side) {
+
+      for (let i = 0; i < 20; i++) {
+        // const imgPath = `http://127.0.0.1:8080/dummy_${imageList[i]}.png`;
+        const imgPath = `http://192.168.1.198:8080/img/dummy_${imageList[i]}.png`;
+        const img = new Image();
+        img.onload = () => {
+
+          // 将图片放在临时canvas上，便于切割。
+          const splitCanvas = document.createElement('canvas')
+          splitCanvas.width = img.width
+          splitCanvas.height = img.height
+          const splitContext = splitCanvas.getContext('2d')
+          splitContext.drawImage(img, 0, 0)
+
+          // 按顺序计算每张图需要切割出来的位置
+          const row = Math.floor(i / 4) + 1
+          const col = i - ( row - 1 ) * 4 + 1
+          const coord = getImgCoord(img.width, img.height, row, col, i)
+          // coord[0]: 小图左上角顶点坐标x， coord[1]: 小图左上角顶点坐标y，coord[2]: 小图宽， coord[3]: 小图高
+          const splitImageData = splitContext.getImageData(coord[0], coord[1], coord[2], coord[3])
+
+          const cardCanvas = document.createElement('canvas')
+          cardCanvas.width = coord[2]
+          cardCanvas.height = coord[3]
+          cardCtx = cardCanvas.getContext('2d')
+          cardCtx.putImageData(splitImageData, 0, 0)
+
+          const el = document.querySelectorAll(`.${side} img`)[i].src = cardCanvas.toDataURL('image/png')
+        }
+        img.crossOrigin = 'anonymous';
+        img.src = imgPath;
+      }
+    }
+
+    function makeImgList(step) {
+      if (step == 1) {
+        while (true) {
+          selectedIndex.add(Math.round(Math.random() * 19) + 1)
+          if (selectedIndex.size >= 6) {
+            break
+          }
+        }
+        const selectedArr = Array.from(selectedIndex)
+        imageList = imageList.map((currentVal, index, arr) => {
+          if (selectedArr.indexOf(index) != -1) {
+            return randomSelectedNum
+          } else {
+            return currentVal
+          }
+        })
+      } else if (step == 2) {
+        while (true) {
+          selectedIndex.add(Math.round(Math.random() * 19) + 1)
+          if (selectedIndex.size >= 12) {
+            break
+          }
+        }
+        const selectedArr = Array.from(selectedIndex)
+        imageList = imageList.map((currentVal, index, arr) => {
+          if (selectedArr.indexOf(index) != -1) {
+            return randomSelectedNum
+          } else {
+            return currentVal
+          }
+        })
+      } else if (step == 3) {
+        imageList = imageList.map((currentVal, index, arr) => {
+          return randomSelectedNum
+        })
+      } else {
+        const imgSet = new Set()
+        while (true) {
+          imgSet.add(Math.round(Math.random() * 19) + 1)
+          if (imgSet.size >= 20) {
+            break
+          }
+        }
+        imageList = Array.from(imgSet)
+      }
+    }
+
+    init()
+
+  </script>
+</body>
+
+</html>
